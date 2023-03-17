@@ -56,7 +56,11 @@ function Delete(date,time,seat){
     let items=value.split('#');
     let index=items.indexOf(time);
     items.splice(index,1);
-    localStorage.setItem(key,items);
+    let str="";
+    for(let i=0;i<items.length;i++){
+         str+=items[i]+'#';
+    }
+    localStorage.setItem(key,str);
     let id=date+time+seat;
     document.getElementById(id).remove();
     
